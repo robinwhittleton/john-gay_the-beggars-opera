@@ -63,3 +63,58 @@ section[epub|type~="epigraph"] > *{
 [epub|type~="epigraph"] [xml|lang]{
 	font-style: italic;
 }
+
+/* Dramatis personae */
+[epub|type~="z3998:dramatis-personae"]{
+	text-align: center;
+}
+
+[epub|type~="z3998:dramatis-personae"] p{
+	text-indent: 0;
+}
+
+[epub|type~="z3998:dramatis-personae"] ul{
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+[epub|type~="z3998:dramatis-personae"] ul li{
+	font-style: italic;
+	margin: 1em;
+}
+
+[epub|type~="z3998:dramatis-personae"] ul + p{
+	margin-top: 2em;
+}
+
+/* Custom dramatis personae styling */
+@supports(display: flex){
+	[epub|type~="z3998:dramatis-personae"] > div{
+		display: flex;
+	}
+
+	[epub|type~="z3998:dramatis-personae"] > div > section{
+		flex-grow: 1;
+	}
+
+	.group{
+		align-items: center;
+		display: flex;
+		flex-direction: row-reverse;
+		gap: 1em;
+		justify-content: center;
+	}
+
+	.group > ul{
+		border-right: 1px solid;
+	}
+
+	.group li:first-child{
+		margin-top: 0;
+	}
+
+	.group li:last-child{
+		margin-bottom: 0;
+	}
+}
