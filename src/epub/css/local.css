@@ -2,6 +2,12 @@
 @namespace epub "http://www.idpf.org/2007/ops";
 @namespace xml "http://www.w3.org/XML/1998/namespace";
 
+header{
+	font-variant: small-caps;
+	margin: 1em;
+	text-align: center;
+}
+
 figure{
 	break-inside: avoid;
 	margin: 1em 2.5em;
