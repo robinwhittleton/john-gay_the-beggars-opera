@@ -27,10 +27,6 @@ figcaption{
 	text-align: center;
 }
 
-figcaption p + p{
-	text-indent: 0;
-}
-
 /* All epigraphs */
 [epub|type~="epigraph"]{
 	font-style: italic;
@@ -38,19 +34,10 @@ figcaption p + p{
 	-epub-hyphens: none;
 }
 
-[epub|type~="epigraph"] em,
-[epub|type~="epigraph"] i{
-	font-style: normal;
-}
-
 [epub|type~="epigraph"] cite{
 	font-style: normal;
 	font-variant: small-caps;
 	margin-top: 1em;
-}
-
-[epub|type~="epigraph"] cite i{
-	font-style: italic;
 }
 /* End all epigraphs */
 
@@ -81,10 +68,6 @@ section[epub|type~="epigraph"] > *{
 	section[epub|type~="epigraph"] > *{
 		margin: 0;
 	}
-
-	section[epub|type~="epigraph"] > * + *{
-		margin-top: 3em;
-	}
 }
 /* End full-page epigraphs */
 
@@ -111,10 +94,6 @@ section[epub|type~="epigraph"] > *{
 [epub|type~="z3998:dramatis-personae"] ul li{
 	font-style: italic;
 	margin: 1em;
-}
-
-[epub|type~="z3998:dramatis-personae"] ul + p{
-	margin-top: 2em;
 }
 
 /* Custom dramatis personae styling */
@@ -149,8 +128,7 @@ section[epub|type~="epigraph"] > *{
 }
 
 /* Drama */
-[epub|type~="z3998:drama"] table,
-table[epub|type~="z3998:drama"]{
+[epub|type~="z3998:drama"] table{
 	border-collapse: collapse;
 	margin: 1em auto;
 	width: 100%;
@@ -189,7 +167,6 @@ table[epub|type~="z3998:drama"]{
 }
 
 [epub|type~="z3998:stage-direction"] [epub|type~="z3998:persona"],
-em [epub|type~="z3998:persona"],
 i [epub|type~="z3998:persona"]{
 	font-style: normal;
 }
@@ -226,18 +203,6 @@ section[epub|type~="z3998:scene"] > p{
 	[epub|type~="z3998:drama"] td[epub|type~="z3998:persona"]{
 		break-after: avoid;
 		margin-top: 1.5em;
-	}
-
-	/* `together` rows get a pseudo-stage-direction. */
-	[epub|type~="z3998:drama"] tr.together td[epub|type~="z3998:persona"]::after{
-		content: " (Together.)";
-		font-style: italic;
-		font-variant: normal;
-	}
-
-	[epub|type~="z3998:drama"] .together td:last-child{
-		border: none;
-		padding: 0;
 	}
 
 	/* Rows that are only stage direction get a top margin. */
